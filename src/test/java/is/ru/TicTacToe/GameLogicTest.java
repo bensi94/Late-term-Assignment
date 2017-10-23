@@ -1,5 +1,7 @@
 package is.ru.ticTacToe;
 
+import org.junit.Before;
+
 public class GameLogicTest {
 
     private GameLogic gameLogicTest;
