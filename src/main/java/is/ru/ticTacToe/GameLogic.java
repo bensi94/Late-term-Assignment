@@ -17,16 +17,15 @@ public class GameLogic {
 
     public boolean gameRunning(){
         return gameRunning;
-
     }
 
     public boolean markBoard(int input){
-      if(playerTurn == true){
+      if(playerTurn == false){
+        playerTurn = !playerTurn;
           return board.markBoard(input,'X');
       }
+      playerTurn = !playerTurn;
       return board.markBoard(input,'O');
-
-
     }
 
     // returns 1 if X wins, 2 if O wins and -1 if not won
