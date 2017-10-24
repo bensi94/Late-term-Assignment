@@ -1,1 +1,8 @@
 language: java
+deploy:
+  provider: heroku
+  api_key:
+    secure: gUfcWQBSDxgwiaDjnIS/PRk9XRI5H8GqOA1WAqbsSFc+qGdzIbVmw3CGI9SNdkkg4yNizlMidRqfePa/t4gHY82BZqhHDwQB0wwpHOSpUYuDTtDVSuVp8usRwK252t+cGiD48E2CLj1cQjB4zQnwV5KGU9wsNGokg2zT+rGhncYoRjiYKquxM49OhDrsjjJqtaXg7nOPyBctYFYAlBxkcI8kCco8PPEHe7/HlInn/Gzcn7mG6XECkIW6K32I51FkVlGHClK2+mY+5NfTcKROAiS6oGBBOMFxeJcGaXOgpxsyPV5SkU1dqR04uretlYIDdMSKX+h+TQA0yvWrYnrN2Bh1A6SkvNur63Azgg/n4sQHO4bmdH4Vbv4+Z9n1PhLwOxtJcJSggiuy9O5Lts/zIaBklAJvKBQ4eEHQOST2drjE++h0bscot6GL3eZa2+clHA3L6OUl0vOWOUc0XMPmKhCxhWeTY2B9IF02jOaW241NWo9U5nVEwSeZ+MB4969rQ7IBL/2e+mFjm6FavfmOhbqotBkgEey5C6XH++VNnRMkJw/zr9mH0KXCkDq8NOVEGlrlP9OkO5lEv7z1IFZaRVILnXk/eJmg4SI516yS6aO9HonOwuSIEc1Oo1AVsFfv1Vg2Y4D0rWZqZnoQJv5J6gNv2umaSoTJoP29lD4SCfk=
+  app: tictactoe-team-lannisters
+  on:
+    repo: The-Lannisters/Late-term-Assignment
