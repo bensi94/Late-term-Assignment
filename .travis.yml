@@ -6,3 +6,4 @@ deploy:
     secure: JssATwpcUkn89cwrpoJLNISoDukNgKkhvM+s4CBgcKfBiK7Ciq0u9vckcVKiyX1Z+TUSUBp2UGk6hhBQE0UVSZEWcgaPz4iRST7q/R9YaE/yyddoL2b+u356ElAwWUaVikL89NaptXo2o0gnxfAqoKtQzFonpwJL1ddLySokXdZmELuNub8Rc0vtS+2dMvg1F6WzGBr+Epx+F20jxAD+ft3YAkklOSRqQsbHgXUT5X9lnBTyX0ZHWq1Ma5E0b4asPs6eNBqF7780nZWIZAn2r7IkWePxAxM84TRdB/xfkIvCg3tWqJ0VxeskI+1Qnb3xg8xrGJFAUlkB/d7cWSBDtRF+ns6jkBoO+YeCrapvwfgKg9sNkuqE/hF6ukDN0lTRXuIibSmmvK5Swb93flZsIwf1UnslqhDvBLtGVOZnMLuwA9ORSwD8e9F1+W/SgY43pNJLq/3lXAY/YJW+2pjSdXDDT9jgkfhi+v5c0jOwinwZuZ5/eFCLTfRmTyvjSdD4WaDWn+evPtFHboBG8Ao/wizeMJSoULgL4dA0719XTDAkcaNpMm97I+YM4YepwrE4SM2xdMkvVUEgFwLPf2uwT7SQ3DNtEqdhI5Qyje+NIwoa2p3G8K8AkkYY29m5+wTZ6JX9YhVmbhdUq/df6Z95+B1xqOJ8nxJNkdC1mzMLnWk=
   on:
       branch: TravisHerokuConnection
+      rvm: 2.4.2
