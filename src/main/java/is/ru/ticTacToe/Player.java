@@ -14,7 +14,8 @@ public class Player {
     }
     
     public double getWinPercentage() {
-        return won / games * 100;
+        this.games = won + lost + tied;
+        return (double)won / (double)games * 100;
     }
 
     public void setIcon(char icon) {

@@ -18,13 +18,13 @@ public class PlayerTest {
 
     @Test
     public void testWinPercentage() {
-        assertEquals(50.0, playerTest.getWinPercentage());
+        assertEquals(50.000, playerTest.getWinPercentage(), 0.0001);
         playerTest.wins();
-        assertEquals(60.0, playerTest.getWinPercentage());
+        assertEquals(60.000, playerTest.getWinPercentage(), 0.0001);
         playerTest.loses();
         playerTest.loses();
         playerTest.ties();
-        assertEquals(37.5, playerTest.getWinPercentage());
+        assertEquals(37.500, playerTest.getWinPercentage(), 0.0001);
     }
 
     @Test
