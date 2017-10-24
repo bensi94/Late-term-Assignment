@@ -9,8 +9,8 @@ public class GameLogic {
 
     GameLogic(){
         board = new Board();
-        playerOne = new Player();
-        playerTwo = new Player();
+        playerOne = new Player('X');
+        playerTwo = new Player('O');
         playerTurn = false;
         gameRunning = true;
     }
