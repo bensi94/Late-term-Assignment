@@ -20,6 +20,15 @@ public class GameLogic {
 
     }
 
+    public boolean markBoard(int input){
+      if(playerTurn == true){
+          return board.markBoard(input,'X');
+      }
+      return board.markBoard(input,'O');
+
+
+    }
+
     // returns 1 if X wins, 2 if O wins and -1 if not won
     public int winner(){
   /*  0,0 0,1 0,2

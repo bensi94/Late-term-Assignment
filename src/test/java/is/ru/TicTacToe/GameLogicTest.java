@@ -18,5 +18,25 @@ public class GameLogicTest {
         assertEquals(true, gameLogicTest.gameRunning());
     }
 
+    @Test
+    public void testmarkBoard(){
+      assertEquals(true, gameLogicTest.markBoard(1));
+    }
+
+    @Test
+    public void testmarkBoard_2(){
+      assertEquals(false,gameLogicTest.markBoard(100));
+    }
+
+    @Test
+    public void testWinner(){
+      gameLogicTest.markBoard(1);
+      gameLogicTest.markBoard(4);
+      gameLogicTest.markBoard(2);
+      gameLogicTest.markBoard(5);
+      gameLogicTest.markBoard(3);
+      assertEquals(1,gameLogicTest.winner());
+
+    }
 
 }
