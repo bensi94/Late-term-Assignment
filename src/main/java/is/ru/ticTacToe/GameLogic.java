@@ -38,55 +38,40 @@ public class GameLogic {
 
     // returns 1 if X wins, 2 if O wins and -1 if not won
     public int winner(){
-  /*  0,0 0,1 0,2
-      1,0 1,1 1,2
-      2,0 2,1 2,2
-    */  // Horizontal
+    // Horizontal
         for(int i = 0; i < 3; i++){
-          if(board.getBoard()[i][0] == 'X' && board.getBoard()[i][1] == 'X' &&
-              board.getBoard()[i][2] == 'X'){
-             return 1;
-          }
-          if(board.getBoard()[i][0] == 'O' && board.getBoard()[i][1] == 'O' &&
-              board.getBoard()[i][2] == 'O'){
-             return 2;
-          }
+          if(board.getBoard()[i][0] == board.getBoard()[i][1] &&
+              board.getBoard()[i][1] == board.getBoard()[i][2]){
+                if(board.getBoard()[i][0] == 'X'){return 1;}
+                else{return 2;}
+              }
         }
 
         // Vertial
         for(int j = 0; j < 3; j++) {
-          if(board.getBoard()[0][j] == 'X' && board.getBoard()[1][j] == 'X' &&
-              board.getBoard()[2][j] == 'X'){
-             return 1;
-          }
-          if(board.getBoard()[0][j] == 'O' && board.getBoard()[1][j] == 'O' &&
-              board.getBoard()[2][j] == 'O'){
-             return 2;
-          }
+          if(board.getBoard()[0][j] == board.getBoard()[1][j] &&
+              board.getBoard()[1][j] == board.getBoard()[2][j]){
+                if(board.getBoard()[0][j] == 'X'){return 1;}
+                else{return 2;}
+              }
         }
 
         // Diagonally left
-        if(board.getBoard()[0][0] == 'X' && board.getBoard()[1][1] == 'X' &&
-            board.getBoard()[2][2] == 'X'){
-           return 1;
-        }
-        if(board.getBoard()[0][0] == 'O' && board.getBoard()[1][1] == 'O' &&
-            board.getBoard()[2][2] == 'O'){
-           return 2;
+        if(board.getBoard()[0][0] == board.getBoard()[1][1] &&
+            board.getBoard()[1][1] == board.getBoard()[2][2]){
+              if(board.getBoard()[0][0] == 'X'){return 1;}
+              else{return 2;}
         }
 
         // Diagonally Right
-        if(board.getBoard()[0][2] == 'X' && board.getBoard()[1][1] == 'X' &&
-            board.getBoard()[2][0] == 'X'){
-           return 1;
-        }
-        if(board.getBoard()[0][2] == 'O' && board.getBoard()[1][1] == 'O' &&
-            board.getBoard()[2][0] == 'O'){
-           return 2;
-        }
+        if(board.getBoard()[0][2] == board.getBoard()[1][1] &&
+            board.getBoard()[1][1] == board.getBoard()[2][0]){
+              if(board.getBoard()[0][2] == 'X'){return 1;}
+              else{return 2;}
 
-        return -1;
-    }
+        }
+    return -1;
 
+}
 
 }
