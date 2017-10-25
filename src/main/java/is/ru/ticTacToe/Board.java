@@ -39,7 +39,8 @@ public class Board {
 */
 	public boolean markBoard(int index, char input) throws IllegalArgumentException {
 		if(index < 1 || index > this.x * this.y)
-			throw new IllegalArgumentException("Index: " + index + " is out of bounds.");
+			return false;	
+			//throw new IllegalArgumentException("Index: " + index + " is out of bounds.");
 
 		int x = (index - 1) / this.x;
 		int y = (index - 1) % this.y;
