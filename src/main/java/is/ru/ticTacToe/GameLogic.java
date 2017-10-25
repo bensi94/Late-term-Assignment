@@ -8,7 +8,7 @@ public class GameLogic {
     private boolean gameRunning;
 
     GameLogic(){
-        board = new Board();
+        board = new Board(3);
         playerOne = new Player('X');
         playerTwo = new Player('O');
         playerTurn = false;
