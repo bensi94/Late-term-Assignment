@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class boardTest {
 
-	Board board = new Board();
+	Board board = new Board(3);
 	@Test
 	public void TestValue() {
 		board.markBoard(9, 'X');
