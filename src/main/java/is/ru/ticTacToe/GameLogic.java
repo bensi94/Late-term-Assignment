@@ -19,7 +19,15 @@ public class GameLogic {
         return gameRunning;
     }
 
+    public boolean validateInput(int input) {
+      return input > 0 && input < 10;
+    }
+
     public boolean markBoard(int input){
+      if(!validateInput(input)) {
+        throw new IllegalArgumentException("Input out of bounds");
+      }
+
       if(playerTurn == false){
         playerTurn = !playerTurn;
           return board.markBoard(input,'X');
