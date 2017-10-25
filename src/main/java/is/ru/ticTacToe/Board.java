@@ -20,15 +20,16 @@ public class Board {
 	}
 
 
-	public void markBoard(int index, char input) {
+	public boolean markBoard(int index, char input) {
 		for (int i = 0; i < 3; i++) {
 			for(int j = 0; j < 3; j++) {
 		 		if (arrayBoard[i][j] == Character.forDigit(index,10)) {
 		 			arrayBoard[i][j] = input;
-		 			break;
+		 			return true;
 		 		}
 			}
 		}
+		return false;
 	}
 
 	public char[][] getBoard() {
