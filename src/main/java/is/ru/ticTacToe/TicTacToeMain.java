@@ -7,7 +7,7 @@ public class TicTacToeMain {
         //ConsoleUI console = new ConsoleUI();
         port(getHerokuPort());
         get("/", (reg, res) -> {
-            return "Hello TicTacToe";
+            return "Hello TicTacToe with TRAVIS";
         });
     }
 
