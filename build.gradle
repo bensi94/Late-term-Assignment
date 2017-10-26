@@ -1,2 +1,6 @@
-defaultTasks 'backend:clean',
+defaultTasks 'frontend:clean',
+        'frontend:yarn',
+        'frontend:yarn_run_build',
+        'frontend:webjar',
+        'backend:clean',
         'backend:build'

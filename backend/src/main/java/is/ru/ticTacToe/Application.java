@@ -6,14 +6,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;;
 
 @EnableSpringfox
 @SpringBootApplication
-public class TicTacToeMain {
+public class Application {
     public static void main(String[] args){
         //ConsoleUI console = new ConsoleUI();
         // port(getHerokuPort());
         // get("/", (reg, res) -> {
         //     return "<h1>Steini er maðurinn</h1>";
         // });
-        SpringApplication.run(TicTacToeMain.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
     // static int getHerokuPort(){

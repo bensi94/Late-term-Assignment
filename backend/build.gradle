@@ -7,9 +7,14 @@
  */
 
 // Apply the java-library plugin to add support for Java Library
+plugins {
+    id 'org.springframework.boot' version '1.5.8.RELEASE'
+}
+
 apply plugin: 'java-library'
 apply plugin: 'application'
-mainClassName = "is.ru.ticTacToe.TicTacToeMain"
+mainClassName = 'is.ru.ticTacToe.Application'
+
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -22,10 +27,12 @@ repositories {
 dependencies {
     //Spark Webfarmework
     compile 'com.sparkjava:spark-core:2.6.0'
+	
     compile 'com.github.springfox.loader:springfox-loader:1.2.0'
     compile 'org.springframework.boot:spring-boot-devtools:1.5.8.RELEASE'
     compile 'org.springframework.boot:spring-boot-starter-web:1.5.8.RELEASE'
-    // This dependency is exported to consumers, that is to say found on their compile classpath.
+	
+	// This dependency is exported to consumers, that is to say found on their compile classpath.
     api 'org.apache.commons:commons-math3:3.6.1'
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
@@ -33,6 +40,16 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.2'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'is.ru.ticTacToe.Application'
+    }
 }
 
 task stage (dependsOn: installDist)
