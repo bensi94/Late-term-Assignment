@@ -1,20 +1,22 @@
 language: java
 jdk:
- - oraclejdk8
+- oraclejdk8
 env:
- - NODE_VERSION=6
+- NODE_VERSION=6
 install:
- - nvm install $NODE_VERSION
- - nvm use $NODE_VERSION
- - sudo apt-get install -y curl
- - curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
- - sudo apt-get install -y nodejs
- - sudo npm install -g yarn
- - ./gradlew
+- nvm install $NODE_VERSION
+- nvm use $NODE_VERSION
+- sudo apt-get install -y curl
+- curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+- sudo apt-get install -y nodejs
+- sudo npm install -g yarn
+- "./gradlew"
 deploy:
   provider: heroku
   api_key:
-    secure: bIDHGfdOEI4cyiF5Bh2Ns10tfEAV9KyPeAlXPgSlK+vNztvf9iBDd9oLdQUYGhUp0kvjFjB0vrNIE6NxdEzndSXZgsM5LUPFpj3iPf1nPCvx210xXNC3jMg9bJhMi8S81lpC90fBn2JPddDW4eNl4soqqafwh7oGP/jA2i307919RIz8MrVAcXLjd1pVKrkZNmjocbGbXzR/pIOdSWLre3x7eabaoRotn35V2YSEEMXrizUphTNJILKkBOwDL800rSyFJ9LxU2uN3X3IbGX3Xn0BzAK3HUPQQF6Y57r7UoPUOowNQHc4v43JtRkm9Jx+19d24Gu+ieOYV01F338Qmc7LbdtYRUx6Q8JCEeQRWw2W01tf8pu/MGr9Lm3dRFYFM359ltmsJcAZE0cA99abi8WeIZelrTo8Oc5LL5zyUK0ItqjDH8jd1EwTf8sJTQ/z8uahNe+iqqyabRd3IlKkuaNCuNVX4PU4aUKV+soAUW15rJ+9p2oqB+ctVaVzDQ8FLjJWWl/1E2kfhzU3r+s8uVrqPrVnYHa9R/4ZVDCIzB+HzmyCFU7FTjNpMW8iK1cMPF5eO7rL9hiRbCT6aDl0ZNSB8XswX6Y68WKItvFxM/O1Bi4NjtaJOdWeO0Dcr09DXma3nmHL48kEejGpnVjEfqfdiv3nGRDErSW++JYxEUk=
+    secure: FCpcFKTOr2lKIy7pUYT5CcnlqGtAs4JUB9SCJIVbSRH4qb+p0zyypx6C8zpAYerogPlrdWHcmpsAh3wXx5qb7uiT671nx23P3acqPYTJUqlilk02RBO2h5dLCVT/tCsZMpKgE3XxOB9ODt43V2x8C3H/NNiDIx4v/sgfPTAHC49XJrJDPKpd8aO5o01U6WCIxuxR/kES2w/fAELP2VNPa7DjpuJ2KKGyv4am8FLrtUzrjfQGIi3YBkgqQjfak/aqSo20L3Xj5WUytM7tuajUohsa67vT2Kx/ji9MLlVlakY4LnYiQAOVASvY5dpOsjprCFGm6Q5pDwZbKScQuurs2538qn5UeKuZ3MusP5Tvevbw0UKsp53JL5bUVk7Xx7vKg4GJUiyoMx3wJmtKpPA8mU/x3dOYpiH98N+DmcbLpF/r/mW0ZQYj68TDRCBrbLo/Je1MrkkLLqzcGEi+cgCfsHPV0ggM6LzS+IU06+3gnBsIdUNs7IhWjTfZ+j56Uwmsj4mlfdkcBI5w2vSjK31ghK1bxKpu6HtR9xP2cbWsKY5NuasSetoU5r2285795Jvx8qbkjBWNrKt8ZsPN9mVhRY4HQLEwZL6buE/gJ0oLhAsj5EJhe2IfBFlZPXUG8/8gyilcAKUum1z5IZpDikN2ovh8sHbaBobpfdEmTToFJvQ=
+    ReactIntegration:
+      secure: AQGEjDZDIPMHvDgciFTkfYG4iqsIuF3+Fp+0fN9Bh2V23Jpq6EfxITU7TqvvEE6Fmkv2J/b4U3y2IhPYKwAAlvdGJUK1rOtcvHEcQqPYWbOOLpRLu9ar7l5orlX0vOiBap7wqrvWiIn9YKpianjQSfyAGqr3mgNmx9vx0v5zdPlvzsu/M4mB+pS4RimjyyqAtzaCc3OhuCU5qnkhWKqJrUlPNwH/83ZgMViK6eY/SnFsYQIlOEqQT+6xCbxF/g5//Cb7PPJ1hgj0rlXMOMOojp1u9Ap/fi5S26G0WZcpLcJcMP5kTmJVyU8rf4swqmZRSE7oOOLLpRLiCudHKEYyu3E4ouSnaFy12tCmrJABfAXhT4mkHXoz7wcEfZ4J4G7aW3yjvuUkgPjxsO8oU3bo8mCIw/qypwJgrhx6fyFSgAqHTBQ7TamGRQECMwBDDOvL/2bLVfK0ZcxxNf+L9bXh5Ec32loEZKO+O2JuF3o5xUI8ktvXhpdPWr+wIItHumUtS1S7nGGdeWbnfhNpwAoFJhBm5uGJdyO4VdjSj6rwow51GbiNJq/Fmp5AszagrKCZiHW4jJkvAopDrMmqDOsX1r0W+fKfX0CCoh+RVU7Qctzyl2di5NKUdHTEgLb2Z4blBlaK23T2tshoJ+3zo7wAmdiLqxC7qyWIO+JCYuriL60=
   app:
-      ConnectingHeroku: the-lannisters-tictactoe
-      ReactIntegration: tic-tac-toe-testing
+    ConnectingHeroku: the-lannisters-tictactoe
+    ReactIntegration: tic-tac-toe-testing
