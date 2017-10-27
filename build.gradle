@@ -4,5 +4,3 @@ defaultTasks 'frontend:clean',
         'frontend:webjar',
         'backend:clean',
         'backend:build'
-
-task stage (dependsOn: installDist)
