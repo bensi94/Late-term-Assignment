@@ -62,19 +62,19 @@ task wrapper(type: Wrapper) {
     gradleVersion = '4.2'
 }
 
-import org.apache.tools.ant.filters.ReplaceTokens
-afterEvaluate {
-    configure(processResources) {
-        filesMatching('**/*.yml') {
-            filter(ReplaceTokens, tokens: [version: jar.version])
-        }
-    }
-}
-
-jar {
-    // baseName = 'Late-term-Assignment'
-    // version = '0.0.1-SNAPSHOT'
-    manifest {
-        attributes 'Main-Class': 'is.ru.ticTacToe.Application'
-    }
-}
+// import org.apache.tools.ant.filters.ReplaceTokens
+// afterEvaluate {
+//     configure(processResources) {
+//         filesMatching('**/*.yml') {
+//             filter(ReplaceTokens, tokens: [version: jar.version])
+//         }
+//     }
+// }
+//
+// jar {
+//     baseName = 'Late-term-Assignment'
+//     version = '0.0.1-SNAPSHOT'
+//     manifest {
+//         attributes 'Main-Class': 'is.ru.ticTacToe.Application'
+//     }
+// }
