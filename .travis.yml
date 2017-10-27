@@ -20,5 +20,5 @@ deploy:
     ReactIntegration:
       secure: snxNqYNjwFpxEFFmirZezaVJ4cvCIuKMO0z1kPL8Ni4WYvs0dka7HJb80ECYQs8nkumGYSzz5prZJvK0/wzia9mvUu0Pgtqptdd419wEh790IK7J88tAI+guESapLJmq15dQaxyP9xhx9GEt4AUtif45di+D+pn04KvMY/hqDORpwJ5YstPa1SYqngUVK6Yqa5309HDiUAtYhDuAudwm1T36ZZl/2fnK3dUKHKqNzXYFw0ABpdBpKvm1Q/w1t7DxO9XLvZdDhymQGj/CZL3CWUA7Ke50NibXT+u3IvktObNBWyuXGdT5VJJL6fIkUlQWkG0++NE43jxtOmBjaSU1YLT8Yyp785thpmqynmdXeHEwG5C87+KWnTLqDQaTTuwK7XhSAxGaPAnvK/gcfjT+8XAKTkv1Myhgdgd3TXwRGa4oUaGVBB4LycaRASq4jAw6sFDTo4/r4LHjkvOMSACi6Xdz1AXhW4NPZfPlFSvfeN24TmuUqBoWrQ1U75h1mzf2IHYN/QjymljSSpzv/SMMn9kiZCqVnkj6LB5FMAMBsKEcr5zllOVCTXB590aFeeqxY+H0nQ4Dw/Bb9F3YRNSHS8+zPjk1cViGA+6v/dfjIYc0f978AyHe73dyXREbDGTI7Wt1lRtJbvybK8htPooS9thuADQASrUV5nJJ2stEHJw=
   app:
-    ConnectingHeroku: the-lannisters-tictactoe
+    master: the-lannisters-tictactoe
     ReactIntegration: tic-tac-toe-testing
