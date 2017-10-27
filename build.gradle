@@ -1,6 +1,11 @@
+apply plugin: 'application'
+mainClassName = "is.ru.ticTacToe.Application"
+
 defaultTasks 'frontend:clean',
         'frontend:yarn',
         'frontend:yarn_run_build',
         'frontend:webjar',
         'backend:clean',
         'backend:build'
+
+task stage (dependsOn: installDist)
