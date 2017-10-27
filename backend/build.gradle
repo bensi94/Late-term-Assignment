@@ -16,6 +16,10 @@ plugins {
     id 'org.springframework.boot' version '1.5.7.RELEASE'
 }
 
+bootRun {
+    systemProperties System.properties
+}
+
 apply plugin: 'java-library'
 apply plugin: 'application'
 apply plugin: 'eclipse'
