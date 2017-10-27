@@ -9,6 +9,6 @@ public class FrontendController {
     @RequestMapping("/")
     @ResponseBody
     String home() {
-      return "Hello World!";
+      return "lalalal";
     }
 }
