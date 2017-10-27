@@ -16,3 +16,5 @@ include 'services:webservice'
 */
 
 rootProject.name = 'Late-term-Assignment'
+include 'backend'
+include 'frontend'
