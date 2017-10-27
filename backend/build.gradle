@@ -8,11 +8,11 @@
 
 // Apply the java-library plugin to add support for Java Library
 plugins {
-    id "java"
-    id "groovy"
-    id "maven"
-    id "idea"
-    id "jacoco"
+    // id "java"
+    // id "groovy"
+    // id "maven"
+    // id "idea"
+    // id "jacoco"
     id 'org.springframework.boot' version '1.5.7.RELEASE'
 }
 
@@ -62,19 +62,19 @@ task wrapper(type: Wrapper) {
     gradleVersion = '4.2'
 }
 
-import org.apache.tools.ant.filters.ReplaceTokens
-afterEvaluate {
-    configure(processResources) {
-        filesMatching('**/*.yml') {
-            filter(ReplaceTokens, tokens: [version: jar.version])
-        }
-    }
-}
-
-jar {
-    baseName = 'Late-term-Assignment'
-    version = '0.0.1-SNAPSHOT'
-    manifest {
-        attributes 'Main-Class': 'is.ru.ticTacToe.Application'
-    }
+// import org.apache.tools.ant.filters.ReplaceTokens
+// afterEvaluate {
+//     configure(processResources) {
+//         filesMatching('**/*.yml') {
+//             filter(ReplaceTokens, tokens: [version: jar.version])
+//         }
+//     }
+// }
+//
+// jar {
+//     baseName = 'Late-term-Assignment'
+//     version = '0.0.1-SNAPSHOT'
+//     manifest {
+//         attributes 'Main-Class': 'is.ru.ticTacToe.Application'
+//     }
 }
