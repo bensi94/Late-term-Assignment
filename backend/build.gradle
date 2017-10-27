@@ -8,6 +8,8 @@
 
 // Apply the java-library plugin to add support for Java Library
 plugins {
+    id "java"
+    id "maven"
     id 'org.springframework.boot' version '1.5.7.RELEASE'
 }
 
