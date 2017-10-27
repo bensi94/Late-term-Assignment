@@ -10,4 +10,4 @@ springfox:
  version: ${info.build.version}
 
 server:
-  port: ${PORT:8080}
+  port: ${PORT}
