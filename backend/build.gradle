@@ -77,4 +77,4 @@ task wrapper(type: Wrapper) {
 //     manifest {
 //         attributes 'Main-Class': 'is.ru.ticTacToe.Application'
 //     }
-}
+//}
