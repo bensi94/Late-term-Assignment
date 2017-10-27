@@ -65,5 +65,3 @@ jar {
         attributes 'Main-Class': 'is.ru.ticTacToe.Application'
     }
 }
-
-task stage (dependsOn: installDist)
