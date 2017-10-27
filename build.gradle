@@ -2,6 +2,7 @@ defaultTasks 'frontend:clean',
         'frontend:yarn',
         'frontend:yarn_run_build',
         'frontend:webjar',
+        'frontend:build',
         'backend:clean',
         'backend:build',
         'backend:installDist'
