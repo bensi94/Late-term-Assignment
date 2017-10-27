@@ -24,6 +24,10 @@ apply plugin: 'java-library'
 apply plugin: 'application'
 apply plugin: 'eclipse'
 
+mainClassName = "is.ru.ticTacToe.Application"
+
+task stage (dependsOn: installDist)
+
 
 // In this section you declare where to find the dependencies of your project
 repositories {
