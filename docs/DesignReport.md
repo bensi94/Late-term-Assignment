@@ -9,8 +9,13 @@ The tic-tac-toe game is a simple web application that allows two players two pla
 The report also includes the initial class diagram and is therefor expected to change over the developing process. Finally the coding rules the team is planing to use are listed.
 
 ## Prototypes ##
+### Low fidelity prototype ###
+The first step in designing the user interface was to make a low fidelity prototype. The prototype is meant to give a fundemental structure of  the user interface, and to see what information we need to give to the users. The prototype was sketched up in powerpoint. This prototype does not necessarily reflect the final outcome of the TicTacToe user interface.
+![The low fidelity prototype can't be found](/docs/pictures/PrototypeOfBoard.png)
 
-
+### Picture from the webpage###
+As you can see from the picture below, there has not been much change from the prototype we sketched up. ...........
+![Atli can't be found](/docs/pictures/Atli.jpg)
 ## Class Diagram ##
 ![Unfortunately the class diagram cannot be found](/docs/pictures/ClassDiagram.png)
 ## Programming Rules
