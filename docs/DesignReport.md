@@ -2,12 +2,11 @@
 
 ## Introduction ## 
 This report gives a good overview of our inital design of the tic-tac-toe game, which was ment as an exercise to set up technical infrastructure to support agile development.
-**MEIRA MEIRA MEIRA**
+Although this project is about using test driven development to make a shippable product, we found it important to make an initial design report so that members can easily visualize how the application works, it is important for the systems development that everyone is on the same page regarding the project. 
 
 
 The tic-tac-toe game is a simple web application that allows two players two play against each other. This report shows the initial wireframe, as well as a picture from the web application to be able to visualize how it works.
 The report also includes the initial class diagram and is therefor expected to change over the developing process. Finally the coding rules the team is planing to use are listed.
-**Spurning með Tecnical enviroment**
 
 ## Prototypes ##
 
