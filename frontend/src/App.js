@@ -1,18 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+	clicked(event) {
+		console.log(event.target);
+	}
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div id="game">
+        <div id ="head">
+          Team Lannisters Tic Tac Toe
+        </div>
+        <div id="gameboard" onClick={(e)=>this.clicked(e)}>
+        	<div className="square" data-square="1"></div>
+					<div className="square" data-square="2"></div>
+					<div className="square" data-square="3"></div>
+					<div className="square" data-square="4"></div>
+					<div className="square" data-square="5"></div>
+					<div className="square" data-square="6"></div>
+					<div className="square" data-square="7"></div>
+					<div className="square" data-square="8"></div>
+					<div className="square" data-square="9"></div>
+        </div>
       </div>
     );
   }
