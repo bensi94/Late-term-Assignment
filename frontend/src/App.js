@@ -1,30 +1,44 @@
 import React, { Component } from 'react';
 import './App.css';
+import Board from './Board.js';
+import ReactDOM from 'react-dom';
 
 class App extends Component {
+	constructor() {
+	super()
+	this.state = {
+		board: Board,
+		text: ''
+	}
+  }
+ 	componentDidMount() {
+	}
 
 	clicked(event) {
-		console.log(event.target);
+        var myNumb = parseInt(event.target.id);
+        fetch('/markBoard', {
+          method: 'PUT',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(myNumb),
+	  }).then(response => response)
+        .then(response => {
+			window.location.reload(true);
+        })
 	}
   render() {
-    return (
-      <div id="game">
-        <div id ="head">
-          Team Lannisters Tic Tac Toe
-        </div>
-        <div id="gameboard" onClick={(e)=>this.clicked(e)}>
-        	<div className="square" data-square="1"></div>
-					<div className="square" data-square="2"></div>
-					<div className="square" data-square="3"></div>
-					<div className="square" data-square="4"></div>
-					<div className="square" data-square="5"></div>
-					<div className="square" data-square="6"></div>
-					<div className="square" data-square="7"></div>
-					<div className="square" data-square="8"></div>
-					<div className="square" data-square="9"></div>
-        </div>
-      </div>
-    );
+
+	  return (
+		  <div id="game">
+	          <div id ="head">
+	          </div>
+	          <div id="gameboard" onClick={(e)=>this.clicked(e)}>
+			  <Board />
+	          </div>
+	        </div>
+		)
   }
 }
 
