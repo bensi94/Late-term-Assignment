@@ -6,14 +6,24 @@ class Restart extends React.Component {
       super(props);
 
       this.state = {
-         data: 'Initial data...'
       }
 
       this.updateState = this.updateState.bind(this);
    };
 
    updateState() {
-      this.setState({data: 'Data updated from the child component...'})
+     fetch('/reset', {
+       method: 'PUT',
+       headers: {
+         'Accept': 'application/json',
+         'Content-Type': 'application/json',
+       },
+       body: JSON.stringify("true"),
+     }).then(response => response)
+       .then(response => {
+         window.location.reload(true);
+     })
+
    }
 
    render() {
@@ -30,8 +40,8 @@ class Content extends React.Component {
 
    render() {
       return (
-         <div>
-            <button onClick = {this.props.updateStateProp}>CLICK</button>
+         <div id ="resetButton">
+            <button onClick = {this.props.updateStateProp}>Restart Game</button>
             <h3>{this.props.myDataProp}</h3>
          </div>
       );

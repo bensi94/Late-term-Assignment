@@ -40,4 +40,10 @@ public class FrontendController {
     public void markBoard(@RequestBody String data){
         logicForController.markBoard(Integer.parseInt(data));
     }
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/reset", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public void restartGame(@RequestBody String data){
+        GameLogic tempLogic = new GameLogic();
+        logicForController = tempLogic;
+    }
 }
