@@ -59,7 +59,7 @@ public class GameLogicTest {
 
 
     @Test
-    public void testWinnerVertical(){
+    public void testWinnerVerticalX(){
       gameLogicTest.markBoard(2);
       gameLogicTest.markBoard(4);
       gameLogicTest.markBoard(5);
@@ -69,12 +69,66 @@ public class GameLogicTest {
     }
 
     @Test
-    public void testWinnerDigonally(){
+    public void testWinnerVerticalO(){
+      gameLogicTest.markBoard(1);
+      gameLogicTest.markBoard(2);
+      gameLogicTest.markBoard(3);
+      gameLogicTest.markBoard(5);
+      gameLogicTest.markBoard(4);
+      gameLogicTest.markBoard(8);
+      assertEquals(2,gameLogicTest.winner());
+    }
+
+    @Test
+    public void testWinnerDiagonallyLeftX(){
       gameLogicTest.markBoard(1);
       gameLogicTest.markBoard(4);
       gameLogicTest.markBoard(5);
       gameLogicTest.markBoard(3);
       gameLogicTest.markBoard(9);
       assertEquals(1,gameLogicTest.winner());
+    }
+
+    @Test
+    public void testWinnerDiagonallyLeftO(){
+      gameLogicTest.markBoard(2);
+      gameLogicTest.markBoard(1);
+      gameLogicTest.markBoard(3);
+      gameLogicTest.markBoard(5);
+      gameLogicTest.markBoard(7);
+      gameLogicTest.markBoard(9);
+      assertEquals(2,gameLogicTest.winner());
+    }
+
+    @Test
+    public void testGetBoard() {
+        assertEquals(gameLogicTest.getBoard()[0][0], ' ');
+    }
+
+    @Test
+    public void testWinnerDiagonallyRightX() {
+        gameLogicTest.markBoard(3);
+        gameLogicTest.markBoard(6);
+        gameLogicTest.markBoard(5);
+        gameLogicTest.markBoard(2);
+        gameLogicTest.markBoard(7);
+        assertEquals(1, gameLogicTest.winner());
+    }
+
+    @Test
+    public void testWinnerDiagonallyRightO() {
+        gameLogicTest.markBoard(1);
+        gameLogicTest.markBoard(3);
+        gameLogicTest.markBoard(2);
+        gameLogicTest.markBoard(5);
+        gameLogicTest.markBoard(9);
+        gameLogicTest.markBoard(7);
+        assertEquals(2, gameLogicTest.winner());
+    }
+
+    @Test
+    public void testValidate() {
+        assertEquals(false, gameLogicTest.validateInput(0));
+        assertEquals(true, gameLogicTest.validateInput(1));
     }
 }
