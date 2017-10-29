@@ -56,7 +56,8 @@ dependencies {
 
 jacocoTestReport {
     reports {
-        xml.enabled false
+        xml.enabled true
+        xml.destination file("../codeCoverage/report.xml")
         html.destination file("../codeCoverage")
     }
 }
