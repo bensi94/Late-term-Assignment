@@ -42,7 +42,11 @@ dependencies {
     compile 'com.github.springfox.loader:springfox-loader:1.2.0'
     compile 'org.springframework.boot:spring-boot-devtools'
     compile 'org.springframework.boot:spring-boot-starter-web'
+	
+	//testCompile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.20.0'
 
+	compile 'org.xerial:sqlite-jdbc:3.20.0'
+	
 	// This dependency is exported to consumers, that is to say found on their compile classpath.
     api 'org.apache.commons:commons-math3:3.6.1'
 
@@ -55,4 +59,10 @@ dependencies {
 
 task wrapper(type: Wrapper) {
     gradleVersion = '4.2'
+}
+
+test {
+    testLogging {
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+    }
 }
