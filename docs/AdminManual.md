@@ -3,7 +3,7 @@
 ## Introduction ##
 
 This TicTacToe game is developed by Team Lannisters. This manual is intended for system administrators. 
-Assumptions are made that administrators have are familiar with Java, Javascript, Gradle, Travis, Heroku.
+Assumptions are made that administrators are familiar with Java, Javascript, Gradle, Travis and Heroku.
 
 ## Requirements ##
 
@@ -15,7 +15,7 @@ Assumptions are made that administrators have are familiar with Java, Javascript
 
 ## Setting up ##
 
-1. Install the nessesary software
+1. Install the necessary software
 2. Fork the repository [Git Soruce](https://github.com/The-Lannisters/Late-term-Assignment)
 
 ## Deploying on Heroku ##
@@ -27,8 +27,8 @@ Assumptions are made that administrators have are familiar with Java, Javascript
     * Push to Heroku using the command: `git push heroku master`
     * For continuous integration with travis:
         * Generate a api key to your travis.yml file using the command `travis encrypt $(heroku auth:token) --add deploy.api_key -a YOUR_APP_NAME`
-        
-        * Push to git `git push origin master` or `git push origin YOUR_BRANCH` for spesific branch
+        
+        * Push to git `git push origin master` or `git push origin YOUR_BRANCH` for specific branch
 
 ## Running the app ##
 In the root directory type:
