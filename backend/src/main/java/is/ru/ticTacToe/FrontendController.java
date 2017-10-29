@@ -31,6 +31,12 @@ public class FrontendController {
         return jsonBoard;
     }
 
+    @RequestMapping(value = "/Winner", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public String Winner() {
+      String jsonWinner = "{\"Winner\":" + Integer.toString(logicForController.winner()) + "}";
+       return jsonWinner;
+    }
+
     @RequestMapping(method = RequestMethod.PUT, value = "/markBoard", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public void markBoard(@RequestBody String data){
         logicForController.markBoard(Integer.parseInt(data));

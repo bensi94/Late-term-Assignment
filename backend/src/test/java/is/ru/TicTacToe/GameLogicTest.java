@@ -48,7 +48,7 @@ public class GameLogicTest {
 
     @Test
     public void testWinnerNoWinner(){
-      gameLogicTest.markBoard(4);
+      gameLogicTest.markBoard(1);
       assertEquals(-1,gameLogicTest.winner());
     }
 

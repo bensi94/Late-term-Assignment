@@ -74,7 +74,7 @@ public class GameLogic {
         }
 
         // Diagonally Right
-        if(board.getBoard()[0][0] != ' ') {
+        if(board.getBoard()[0][2] != ' ') {
             if(board.getBoard()[0][2] == board.getBoard()[1][1] &&
                 board.getBoard()[1][1] == board.getBoard()[2][0]){
                   if(board.getBoard()[0][2] == 'X'){return 1;}
