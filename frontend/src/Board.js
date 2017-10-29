@@ -15,17 +15,32 @@ class Board extends React.Component {
                 boardData: response
             })
         })
+        fetch('/Winner').then(response => response.json())
+          .then(response => {
+              console.log(response);
+              this.setState({
+                  winnerData: response
+                })
+            })
     }
   render() {
-      if(this.state.boardData){
+      if(this.state.boardData && this.state.winnerData){
          var board = [];
-         for (var i = 0; i < 9; i++){
-               board.push(<div className="square" data-square={i+1} id={i+1}>{this.state.boardData.board[i].square}</div>);
+         var winner = [];
+          if(this.state.winnerData.Winner !== -1){
+            winner.push(<div><h3>Player {this.state.winnerData.Winner} Won!</h3></div>);
+        }
+
+         for (var i = 1; i < 10; i++){
+               board.push(<div className="square" data-square={i} id={i}>{this.state.boardData.board[i-1].square}</div>);
            }
     }
-    if (!this.state.boardData) return <p> Loading...</p>
+    if (!this.state.boardData || !this.state.winnerData) return <p> Loading...</p>
     return (
+      <div id="tester">
      <div id="gameboard"> {board} </div>
+     <div id="winner"> {winner} </div>
+     </div>
     );
   }
 }
