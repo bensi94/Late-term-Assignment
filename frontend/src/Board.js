@@ -25,7 +25,7 @@ class Board extends React.Component {
     }
     if (!this.state.boardData) return <p> Loading...</p>
     return (
-     <div> {board} </div>
+     <div id="gameboard"> {board} </div>
     );
   }
 }

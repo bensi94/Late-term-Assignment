@@ -14,7 +14,7 @@ class App extends Component {
 	}
 
 	clicked(event) {
-        var myNumb = event.target.id;
+        var myNumb = parseInt(event.target.id.toString());
         fetch('/markBoard', {
           method: 'PUT',
           headers: {
