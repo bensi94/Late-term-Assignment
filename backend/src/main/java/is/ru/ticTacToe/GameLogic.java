@@ -23,6 +23,10 @@ public class GameLogic {
       return input > 0 && input < 10;
     }
 
+    public char[][] getBoard(){
+        return board.getBoard();
+    }
+
     public boolean markBoard(int input){
       if(!validateInput(input)) {
         throw new IllegalArgumentException("Input out of bounds");
@@ -40,38 +44,46 @@ public class GameLogic {
     public int winner(){
     // Horizontal
         for(int i = 0; i < 3; i++){
-          if(board.getBoard()[i][0] == board.getBoard()[i][1] &&
-              board.getBoard()[i][1] == board.getBoard()[i][2]){
-                if(board.getBoard()[i][0] == 'X'){return 1;}
-                else{return 2;}
-              }
+            if(board.getBoard()[i][0] != ' ') {
+              if(board.getBoard()[i][0] == board.getBoard()[i][1] &&
+                  board.getBoard()[i][1] == board.getBoard()[i][2]){
+                    if(board.getBoard()[i][0] == 'X'){return 1;}
+                    else{return 2;}
+                  }
+          }
         }
 
         // Vertial
         for(int j = 0; j < 3; j++) {
-          if(board.getBoard()[0][j] == board.getBoard()[1][j] &&
-              board.getBoard()[1][j] == board.getBoard()[2][j]){
-                if(board.getBoard()[0][j] == 'X'){return 1;}
-                else{return 2;}
-              }
+            if(board.getBoard()[0][j] != ' ') {
+                if(board.getBoard()[0][j] == board.getBoard()[1][j] &&
+                    board.getBoard()[1][j] == board.getBoard()[2][j]){
+                      if(board.getBoard()[0][j] == 'X'){return 1;}
+                      else{return 2;}
+                    }
+            }
         }
 
         // Diagonally left
-        if(board.getBoard()[0][0] == board.getBoard()[1][1] &&
-            board.getBoard()[1][1] == board.getBoard()[2][2]){
-              if(board.getBoard()[0][0] == 'X'){return 1;}
-              else{return 2;}
+        if(board.getBoard()[0][0] != ' ') {
+            if(board.getBoard()[0][0] == board.getBoard()[1][1] &&
+                board.getBoard()[1][1] == board.getBoard()[2][2]){
+                  if(board.getBoard()[0][0] == 'X'){return 1;}
+                  else{return 2;}
+            }
         }
 
         // Diagonally Right
-        if(board.getBoard()[0][2] == board.getBoard()[1][1] &&
-            board.getBoard()[1][1] == board.getBoard()[2][0]){
-              if(board.getBoard()[0][2] == 'X'){return 1;}
-              else{return 2;}
+        if(board.getBoard()[0][0] != ' ') {
+            if(board.getBoard()[0][2] == board.getBoard()[1][1] &&
+                board.getBoard()[1][1] == board.getBoard()[2][0]){
+                  if(board.getBoard()[0][2] == 'X'){return 1;}
+                  else{return 2;}
 
+            }
         }
-    return -1;
+        return -1;
 
-}
+    }
 
 }

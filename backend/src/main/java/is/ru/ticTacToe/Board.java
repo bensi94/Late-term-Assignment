@@ -4,7 +4,7 @@ public class Board {
 
 	private char arrayBoard[][];
 	private int x, y;
-	
+
 	public Board(int size) throws IllegalArgumentException {
 		if(size < 1)
 			throw new IllegalArgumentException("The size of the board is too small.");
@@ -15,11 +15,9 @@ public class Board {
 	}
 
 	private void initializeBoard() {
-		char counter = '1';
 		for (int i = 0; i < this.x; i++) {
 			for(int j = 0; j < this.y; j++) {
-		 		arrayBoard[i][j] = counter;
-		 		counter++;
+		 		arrayBoard[i][j] = ' ';
 			}
 		}
 	}
@@ -39,13 +37,13 @@ public class Board {
 */
 	public boolean markBoard(int index, char input) throws IllegalArgumentException {
 		if(index < 1 || index > this.x * this.y)
-			return false;	
+			return false;
 			//throw new IllegalArgumentException("Index: " + index + " is out of bounds.");
 
 		int x = (index - 1) / this.x;
 		int y = (index - 1) % this.y;
 
-		if (arrayBoard[x][y] == Character.forDigit(index,10)) {
+		if (arrayBoard[x][y] == ' ') {
 			arrayBoard[x][y] = input;
 			return true;
 		}
