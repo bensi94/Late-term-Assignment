@@ -18,6 +18,7 @@ bootRun {
 apply plugin: 'java-library'
 apply plugin: 'application'
 apply plugin: 'eclipse'
+apply plugin: 'jacoco'
 
 mainClassName = "is.ru.ticTacToe.Application"
 
@@ -55,6 +56,14 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        xml.destination file("../report.xml")
+        html.destination file("../codeCoverage")
+    }
 }
 
 task wrapper(type: Wrapper) {

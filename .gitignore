@@ -43,3 +43,6 @@ gradle-app.setting
 .settings
 .vscode
 ezBuild.sh
+codeCoverage
+node_modules
+backend/gameDatabase.db
