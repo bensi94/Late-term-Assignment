@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Board from './Board.js';
-import ReactDOM from 'react-dom';
 
 class App extends Component {
 	constructor() {
@@ -15,7 +14,7 @@ class App extends Component {
 	}
 
 	clicked(event) {
-        var myNumb = parseInt(event.target.id);
+        var myNumb = event.target.id;
         fetch('/markBoard', {
           method: 'PUT',
           headers: {
