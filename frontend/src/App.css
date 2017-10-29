@@ -46,3 +46,11 @@
 .square:nth-child(3n) {
 	border-right: 0;
 }
+
+#resetButton{
+	padding-top: 1cm;
+}
+
+#winner{
+	padding-top: 0.5cm;
+}

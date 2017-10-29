@@ -13,7 +13,6 @@ import java.util.Map;
 public class FrontendController {
 
     private GameLogic logicForController = new GameLogic();
-    private JsonResponse response = new JsonResponse();
 
     @RequestMapping(value = "/board", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public String board() {
@@ -31,8 +30,20 @@ public class FrontendController {
         return jsonBoard;
     }
 
+    @RequestMapping(value = "/Winner", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public String Winner() {
+      String jsonWinner = "{\"Winner\":" + Integer.toString(logicForController.winner()) + "}";
+       return jsonWinner;
+    }
+
     @RequestMapping(method = RequestMethod.PUT, value = "/markBoard", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public void markBoard(@RequestBody String data){
         logicForController.markBoard(Integer.parseInt(data));
+    }
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/reset", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public void restartGame(@RequestBody String data){
+        GameLogic tempLogic = new GameLogic();
+        logicForController = tempLogic;
     }
 }

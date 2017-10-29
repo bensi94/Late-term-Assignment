@@ -5,18 +5,15 @@ public class GameLogic {
     private Player playerOne, playerTwo;
     //X(playerOne) is FALSE, O(playerTwo) is TRUE
     private boolean playerTurn;
-    private boolean gameRunning;
+    // Lock the game when it has been won
+    private boolean gameLocked;
 
     GameLogic(){
         board = new Board(3);
         playerOne = new Player('X');
         playerTwo = new Player('O');
         playerTurn = false;
-        gameRunning = true;
-    }
-
-    public boolean gameRunning(){
-        return gameRunning;
+        gameLocked = false;
     }
 
     public boolean validateInput(int input) {
@@ -28,20 +25,28 @@ public class GameLogic {
     }
 
     public boolean markBoard(int input){
-      if(!validateInput(input)) {
-        throw new IllegalArgumentException("Input out of bounds");
-      }
+      if(gameLocked == false){
+        if(!validateInput(input)) {
+          throw new IllegalArgumentException("Input out of bounds");
+        }
 
-      if(playerTurn == false){
-        playerTurn = !playerTurn;
-          return board.markBoard(input,'X');
+        if(playerTurn == false){
+          if(board.markBoard(input,'X') == true){
+            playerTurn = !playerTurn;
+            return true;
+          }
+        }
+        if(board.markBoard(input,'O') == true){
+          playerTurn = !playerTurn;
+          return true;
+        }
       }
-      playerTurn = !playerTurn;
-      return board.markBoard(input,'O');
+      return false;
     }
 
     // returns 1 if X wins, 2 if O wins and -1 if not won
     public int winner(){
+      gameLocked = true;
     // Horizontal
         for(int i = 0; i < 3; i++){
             if(board.getBoard()[i][0] != ' ') {
@@ -74,7 +79,7 @@ public class GameLogic {
         }
 
         // Diagonally Right
-        if(board.getBoard()[0][0] != ' ') {
+        if(board.getBoard()[0][2] != ' ') {
             if(board.getBoard()[0][2] == board.getBoard()[1][1] &&
                 board.getBoard()[1][1] == board.getBoard()[2][0]){
                   if(board.getBoard()[0][2] == 'X'){return 1;}
@@ -82,6 +87,7 @@ public class GameLogic {
 
             }
         }
+        gameLocked = false;
         return -1;
 
     }
