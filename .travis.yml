@@ -12,7 +12,13 @@ install:
 - sudo npm install -g yarn
 - sudo npm install superagent
 - sudo npm install react-dom
+- sudo npm install codecov
 - "./gradlew"
+script:
+  - ./gradlew check
+  - ./gradlew jacocoTestReport
+after_success:
+  - codecov
 before_deploy: gradle installDist
 deploy:
   provider: heroku
@@ -24,3 +30,4 @@ deploy:
   app:
     master: the-lannisters-tictactoe
     UI: tic-tac-toe-testing
+

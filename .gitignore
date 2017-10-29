@@ -43,3 +43,6 @@ gradle-app.setting
 .settings
 .vscode
 ezBuild.sh
+
+node_modules
+codeCoverage

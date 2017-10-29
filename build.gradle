@@ -4,4 +4,5 @@ defaultTasks 'frontend:clean',
         'frontend:webjar',
         'backend:clean',
         'backend:build',
-        'backend:installDist'
+        'backend:installDist',
+        'backend:jacocoTestReport'
