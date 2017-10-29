@@ -18,10 +18,7 @@ public class ApplicationDB {
 		conn = null;
 		
 		// Create directory
-    	//File currentDirFile = new File(".");
-		//String helper = currentDirFile.getAbsolutePath();
-		//String currentDir = helper.substring(0, helper.length() - 1);
-		String currentDir = System.getProperty("user.home");
+		String currentDir = System.getProperty("user.dir");
 		
 		// db parameters
 		if(test) {
