@@ -12,8 +12,8 @@ The report also includes the initial class diagram and is therefor expected to c
 The first step in designing the user interface was to make a low fidelity prototype. The prototype is meant to give a fundamental  structure of  the user interface, and to see what information we need to give to the users. The prototype was sketched up in PowerPoint. This prototype does not necessarily reflect the final outcome of the TicTacToe user interface.
 ![The low fidelity prototype can't be found](/docs/pictures/PrototypeOfBoard.png)
 
-### Picture from the webpage###
-As you can see from the picture below, there has not been much change from the prototype we sketched up. ...........
+### Picture from the webpage ###
+As you can see from the picture below, there has not been much change from the prototype we sketched up and the final product, both functional expectations and graphical interfce turned out as planned.
 ![Picture from the webApp can't be found](/docs/pictures/PicFromHeroku.png)
 ## Class Diagram ##
 
