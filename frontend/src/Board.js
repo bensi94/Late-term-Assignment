@@ -27,7 +27,7 @@ class Board extends React.Component {
       if(this.state.boardData && this.state.winnerData){
          var board = [];
          var winner = [];
-          if(this.state.winnerData.Winner != -1){
+          if(this.state.winnerData.Winner !== -1){
             winner.push(<div><p>Player {this.state.winnerData.Winner} Won!</p></div>);
         }
 
