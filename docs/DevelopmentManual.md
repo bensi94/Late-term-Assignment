@@ -25,9 +25,8 @@ October 29, 2017
 
 1. Install the nessesary software.
 2. Clone the repository `git clone https://github.com/The-Lannisters/Late-term-Assignment`
-3. Install [Google Chrome](https://support.google.com/chrome/answer/95346?co=GENIE.Platform%3DDesktop&hl=en)
-4. Install Java JDK 8
-5. Set up Selenium and Travis, Heroku, Gradle
+3. Install Java JDK 8
+4. Set up Selenium and Travis, Heroku, Gradle
 
 ##  Run and build the project ##
 
