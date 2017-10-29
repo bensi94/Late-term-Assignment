@@ -19,7 +19,6 @@ script:
   - ./gradlew jacocoTestReport
 after_success:
   - bash <(curl -s https://codecov.io/bash) -t 97716df0-4472-4b46-94da-bf95ded056f5
-  - codecov
 before_deploy: gradle installDist
 deploy:
   provider: heroku
