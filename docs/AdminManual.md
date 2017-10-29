@@ -16,14 +16,19 @@ Assumptions are made that administrators have are familiar with Java, Javascript
 ## Setting up ##
 
 1. Install the nessesary software
-2. Clone the repository `git clone https://github.com/The-Lannisters/Late-term-Assignment`
+2. Fork the repository [Git Soruce](https://github.com/The-Lannisters/Late-term-Assignment)
 
 ## Deploying on Heroku ##
 
-1. [Login](https://www.heroku.com/) to heroku
-2. When in root directory of the project, type: `heroku create [name]`, the name represents the name of the application.
-3. BÆTA EINHVERJU HÉR VIÐ HVAÐ ÞARF AÐ GERA Í PROJECTINU ÁÐUR EN ÞVÍ ER PUSHAÐ
-4. Push to Heroku using the command: `git push heroku master`
+1. [SIGN UP](https://www.heroku.com/) to heroku
+2. Install heroku toolbelt to your localhost, see documentation at [Heroku](https://toolbelt.heroku.com)
+3. Create your Heroku app in terminal `heroku apps:create YOUR_APP_NAME`
+4. Now you can either push to Heroku or generate a Travis key and deploy it in continuous integration
+    * Push to Heroku using the command: `git push heroku master`
+    * For continuous integration with travis:
+        * Generate a api key to your travis.yml file using the command `travis encrypt $(heroku auth:token) --add deploy.api_key -a YOUR_APP_NAME`
+        
+        * Push to git `git push origin master` or `git push origin YOUR_BRANCH` for spesific branch
 
 ## Running the app ##
 In the root directory type:
