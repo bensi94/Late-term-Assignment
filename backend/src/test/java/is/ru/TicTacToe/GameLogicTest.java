@@ -16,11 +16,6 @@ public class GameLogicTest {
     }
 
     @Test
-    public void testGameRunning(){
-        assertEquals(true, gameLogicTest.gameRunning());
-    }
-
-    @Test
     public void testmarkBoard(){
       assertEquals(true, gameLogicTest.markBoard(1));
     }

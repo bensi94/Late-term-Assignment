@@ -5,18 +5,15 @@ public class GameLogic {
     private Player playerOne, playerTwo;
     //X(playerOne) is FALSE, O(playerTwo) is TRUE
     private boolean playerTurn;
-    private boolean gameRunning;
+    // Lock the game when it has been won
+    private boolean gameLocked;
 
     GameLogic(){
         board = new Board(3);
         playerOne = new Player('X');
         playerTwo = new Player('O');
         playerTurn = false;
-        gameRunning = true;
-    }
-
-    public boolean gameRunning(){
-        return gameRunning;
+        gameLocked = false;
     }
 
     public boolean validateInput(int input) {
@@ -28,20 +25,24 @@ public class GameLogic {
     }
 
     public boolean markBoard(int input){
-      if(!validateInput(input)) {
-        throw new IllegalArgumentException("Input out of bounds");
-      }
+      if(gameLocked == false){
+        if(!validateInput(input)) {
+          throw new IllegalArgumentException("Input out of bounds");
+        }
 
-      if(playerTurn == false){
+        if(playerTurn == false){
+          playerTurn = !playerTurn;
+            return board.markBoard(input,'X');
+        }
         playerTurn = !playerTurn;
-          return board.markBoard(input,'X');
+        return board.markBoard(input,'O');
       }
-      playerTurn = !playerTurn;
-      return board.markBoard(input,'O');
+      return false;
     }
 
     // returns 1 if X wins, 2 if O wins and -1 if not won
     public int winner(){
+      gameLocked = true;
     // Horizontal
         for(int i = 0; i < 3; i++){
             if(board.getBoard()[i][0] != ' ') {
@@ -82,6 +83,7 @@ public class GameLogic {
 
             }
         }
+        gameLocked = false;
         return -1;
 
     }
