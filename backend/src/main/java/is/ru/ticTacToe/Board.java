@@ -22,23 +22,9 @@ public class Board {
 		}
 	}
 
-/*
-	public boolean markBoard(int index, char input) {
-		for (int i = 0; i < 3; i++) {
-			for(int j = 0; j < 3; j++) {
-		 		if (arrayBoard[i][j] == Character.forDigit(index,10)) {
-		 			arrayBoard[i][j] = input;
-		 			return true;
-		 		}
-			}
-		}
-		return false;
-	}
-*/
 	public boolean markBoard(int index, char input) throws IllegalArgumentException {
 		if(index < 1 || index > this.x * this.y)
 			return false;
-			//throw new IllegalArgumentException("Index: " + index + " is out of bounds.");
 
 		int x = (index - 1) / this.x;
 		int y = (index - 1) % this.y;
