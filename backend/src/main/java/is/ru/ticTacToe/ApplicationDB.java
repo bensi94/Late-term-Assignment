@@ -22,10 +22,10 @@ public class ApplicationDB {
 		
 		// db parameters
 		if(test) {
-			url = "jdbc:sqlite:" + currentDir + "\\gameDatabaseTest.db";
+			url = "jdbc:sqlite:backend/gameDatabaseTest.db";
 		}
 		else { 
-			url = "jdbc:sqlite:" + currentDir + "\\gameDatabase.db";
+			url = "jdbc:sqlite:backend/gameDatabase.db";
 		}	
 	}
 	
