@@ -18,16 +18,17 @@ public class ApplicationDB {
 		conn = null;
 		
 		// Create directory
-    	File currentDirFile = new File(".");
-		String helper = currentDirFile.getAbsolutePath();
-		String currentDir = helper.substring(0, helper.length() - 1);
+    	//File currentDirFile = new File(".");
+		//String helper = currentDirFile.getAbsolutePath();
+		//String currentDir = helper.substring(0, helper.length() - 1);
+		String currentDir = System.getProperty("user.home");
 		
 		// db parameters
 		if(test) {
-			url = "jdbc:sqlite:" + currentDir + "gameDatabaseTest.db";
+			url = "jdbc:sqlite:" + currentDir + "\\gameDatabaseTest.db";
 		}
 		else { 
-			url = "jdbc:sqlite:" + currentDir + "gameDatabase.db";
+			url = "jdbc:sqlite:" + currentDir + "\\gameDatabase.db";
 		}	
 	}
 	

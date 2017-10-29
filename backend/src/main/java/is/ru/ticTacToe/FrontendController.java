@@ -46,4 +46,11 @@ public class FrontendController {
         GameLogic tempLogic = new GameLogic(false);
         logicForController = tempLogic;
     }
+	
+	@RequestMapping(value = "/wins", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public String xWinCount(){
+		String count = "{\"x\":" + Integer.toString(logicForController.getXWinCount()) + ",\"o\":" + Integer.toString(logicForController.getOWinCount()) + "}";
+        return count;
+    }
+	
 }

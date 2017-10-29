@@ -12,6 +12,13 @@ class App extends Component {
 	}
   }
  	componentDidMount() {
+		fetch('/wins').then(response => response.json())
+          .then(response => {
+              console.log(response);
+              this.setState({
+                  winsCount: response
+                })
+            })
 	}
 
 	clicked(event) {
@@ -29,7 +36,11 @@ class App extends Component {
         })
 	}
   render() {
-
+	  
+	  
+	  if(!this.state.winsCount){
+		  return (<div></div>)
+	  }
 	  return (
 		  <div id="game">
 	          <div id ="head">
@@ -38,6 +49,8 @@ class App extends Component {
 			  <Board />
 	          </div>
 				<Restart/>
+				<div>X wins: {this.state.winsCount.x} </div>
+				<div>O wins: {this.state.winsCount.o} </div>
 	        </div>
 		)
   }
