@@ -5,17 +5,16 @@ import java.io.File;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 public class ApplicationDB {
     
-	//private Connection database = null;
-	//private String url = "jdbc:sqlite:C://sqlite/db/tests.db\"";
 	private Connection conn;
 	private String url;
 	
-	public ApplicationDB() {
+	public ApplicationDB(boolean test) {
 		conn = null;
 		
 		// Create directory
@@ -24,13 +23,18 @@ public class ApplicationDB {
 		String currentDir = helper.substring(0, helper.length() - 1);
 		
 		// db parameters
-        url = "jdbc:sqlite:" + currentDir + "gameDatabase.db";	
+		if(test) {
+			url = "jdbc:sqlite:" + currentDir + "gameDatabaseTest.db";
+		}
+		else { 
+			url = "jdbc:sqlite:" + currentDir + "gameDatabase.db";
+		}	
 	}
 	
     public void connect() {
         try {
             // create a connection to the database
-            conn = DriverManager.getConnection(url);     
+            conn = DriverManager.getConnection(url);		
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -76,6 +80,46 @@ public class ApplicationDB {
             System.out.println(e.getMessage());
         }
     }
+	
+	public void clearResultTable() {
+		String sql = "DELETE FROM games;";
+		try (Statement stmt = conn.createStatement()) {
+            // clear table
+        	stmt.execute(sql);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+	}
+	
+	public int getXWinCount() {
+		ResultSet rs;
+		int count = 0;
+		String sql = "SELECT COUNT(winner) as 'count' FROM games WHERE winner = 'x';";
+		try (Statement stmt = conn.createStatement()) {
+            // create a new table
+        	rs = stmt.executeQuery(sql);
+			count = rs.getInt("count");
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+		return count;
+	}
+	
+	public int getOWinCount() {
+		ResultSet rs;
+		int count = 0;
+		String sql = "SELECT COUNT(winner) as 'count' FROM games WHERE winner = 'o';";
+		try (Statement stmt = conn.createStatement()) {
+            // create a new table
+        	rs = stmt.executeQuery(sql);
+			count = rs.getInt("count");
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+		return count;
+	}
 }
 
 

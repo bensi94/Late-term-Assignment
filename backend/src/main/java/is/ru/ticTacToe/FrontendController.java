@@ -12,7 +12,7 @@ import java.util.Map;
 @RestController
 public class FrontendController {
 
-    private GameLogic logicForController = new GameLogic();
+    private GameLogic logicForController = new GameLogic(false);
 
     @RequestMapping(value = "/board", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public String board() {
@@ -43,7 +43,7 @@ public class FrontendController {
 
     @RequestMapping(method = RequestMethod.PUT, value = "/reset", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public void restartGame(@RequestBody String data){
-        GameLogic tempLogic = new GameLogic();
+        GameLogic tempLogic = new GameLogic(false);
         logicForController = tempLogic;
     }
 }
