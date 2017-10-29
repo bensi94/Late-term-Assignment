@@ -1,20 +1,45 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Board from './Board.js';
+import Restart from './Restart.js';
 
 class App extends Component {
+	constructor() {
+	super()
+	this.state = {
+		board: Board,
+		text: ''
+	}
+  }
+ 	componentDidMount() {
+	}
+
+	clicked(event) {
+        var myNumb = parseInt(event.target.id.toString(),10);
+        fetch('/markBoard', {
+          method: 'PUT',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(myNumb),
+	  }).then(response => response)
+        .then(response => {
+			window.location.reload(true);
+        })
+	}
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+
+	  return (
+		  <div id="game">
+	          <div id ="head">
+	          </div>
+	          <div id="gameboard" onClick={(e)=>this.clicked(e)}>
+			  <Board />
+	          </div>
+				<Restart/>
+	        </div>
+		)
   }
 }
 
