@@ -19,13 +19,13 @@ public class ApplicationDB {
 		
 		// Create directory
 		String currentDir = System.getProperty("user.dir");
-		
+		System.out.println(currentDir);
 		// db parameters
 		if(test) {
-			url = "jdbc:sqlite:backend/gameDatabaseTest.db";
+			url = "jdbc:sqlite:" + currentDir + "\\gameDatabaseTest.db";
 		}
 		else { 
-			url = "jdbc:sqlite:backend/gameDatabase.db";
+			url = "jdbc:sqlite:" + currentDir + "\\gameDatabase.db";
 		}	
 	}
 	
