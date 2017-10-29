@@ -9,10 +9,12 @@ import org.junit.rules.ExpectedException;
 public class GameLogicTest {
 
     private GameLogic gameLogicTest;
-
+	private ApplicationDB db;
+	
     @Before
     public void setUp() throws Exception {
-        gameLogicTest = new GameLogic();
+        gameLogicTest = new GameLogic(true);
+		db = new ApplicationDB(true);
     }
 
     @Test
@@ -76,5 +78,23 @@ public class GameLogicTest {
       gameLogicTest.markBoard(3);
       gameLogicTest.markBoard(9);
       assertEquals(1,gameLogicTest.winner());
+    }
+	
+	@Test
+    public void testXWinCount(){
+	  db.connect();
+	  db.clearResultTable();
+	  db.addGameResult("x", 10);
+	  db.addGameResult("x", 10);
+	  
+      assertEquals(2,gameLogicTest.getXWinCount());
+    }
+	
+	public void testOWinCount(){
+	  db.connect();
+	  db.clearResultTable();
+	  db.addGameResult("o", 10);
+	  db.addGameResult("o", 10);
+      assertEquals(2,gameLogicTest.getOWinCount());
     }
 }

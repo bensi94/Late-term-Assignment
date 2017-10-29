@@ -7,13 +7,27 @@ public class GameLogic {
     private boolean playerTurn;
     // Lock the game when it has been won
     private boolean gameLocked;
+	private ApplicationDB db;
+	private int xmoves;
+	private int omoves;
 
-    GameLogic(){
+    GameLogic(boolean test){
         board = new Board(3);
         playerOne = new Player('X');
         playerTwo = new Player('O');
         playerTurn = false;
         gameLocked = false;
+		if(test) {
+			db = new ApplicationDB(true);
+		}
+		else {
+			db = new ApplicationDB(false);
+		}
+		db.connect();
+		db.initDB();
+		db.disconnect();
+		xmoves = 0;
+		omoves = 0;
     }
 
     public boolean validateInput(int input) {
@@ -33,11 +47,13 @@ public class GameLogic {
         if(playerTurn == false){
           if(board.markBoard(input,'X') == true){
             playerTurn = !playerTurn;
+			xmoves += 1;
             return true;
           }
         }
         if(board.markBoard(input,'O') == true){
           playerTurn = !playerTurn;
+		  omoves += 1;
           return true;
         }
       }
@@ -52,8 +68,14 @@ public class GameLogic {
             if(board.getBoard()[i][0] != ' ') {
               if(board.getBoard()[i][0] == board.getBoard()[i][1] &&
                   board.getBoard()[i][1] == board.getBoard()[i][2]){
-                    if(board.getBoard()[i][0] == 'X'){return 1;}
-                    else{return 2;}
+                    if(board.getBoard()[i][0] == 'X'){
+						updateResultTable("x");
+						return 1;
+					}
+                    else{
+						updateResultTable("o");
+						return 2;
+					}
                   }
           }
         }
@@ -63,8 +85,14 @@ public class GameLogic {
             if(board.getBoard()[0][j] != ' ') {
                 if(board.getBoard()[0][j] == board.getBoard()[1][j] &&
                     board.getBoard()[1][j] == board.getBoard()[2][j]){
-                      if(board.getBoard()[0][j] == 'X'){return 1;}
-                      else{return 2;}
+                      if(board.getBoard()[0][j] == 'X'){
+						  updateResultTable("x");
+						  return 1;
+					  }
+                      else{
+						  updateResultTable("o");
+						  return 2;
+					  }
                     }
             }
         }
@@ -73,8 +101,14 @@ public class GameLogic {
         if(board.getBoard()[0][0] != ' ') {
             if(board.getBoard()[0][0] == board.getBoard()[1][1] &&
                 board.getBoard()[1][1] == board.getBoard()[2][2]){
-                  if(board.getBoard()[0][0] == 'X'){return 1;}
-                  else{return 2;}
+                  if(board.getBoard()[0][0] == 'X'){
+					  updateResultTable("x");
+					  return 1;
+				  }
+                  else{
+					  updateResultTable("o");
+					  return 2;
+				  }
             }
         }
 
@@ -82,8 +116,14 @@ public class GameLogic {
         if(board.getBoard()[0][2] != ' ') {
             if(board.getBoard()[0][2] == board.getBoard()[1][1] &&
                 board.getBoard()[1][1] == board.getBoard()[2][0]){
-                  if(board.getBoard()[0][2] == 'X'){return 1;}
-                  else{return 2;}
+                  if(board.getBoard()[0][2] == 'X'){
+					  updateResultTable("x");
+					  return 1;
+				  }
+                  else{
+					  updateResultTable("o");
+					  return 2;
+				  }
 
             }
         }
@@ -91,5 +131,25 @@ public class GameLogic {
         return -1;
 
     }
-
+	
+	private void updateResultTable(String winner){
+		db.connect();
+		if(winner == "x") {
+			db.addGameResult(winner, xmoves);
+		}
+		else {
+			db.addGameResult(winner, omoves);
+		}
+		db.disconnect();
+	}
+	
+	public int getXWinCount() {
+		db.connect();
+		return db.getXWinCount();
+	}
+	
+	public int getOWinCount() {
+		db.connect();
+		return db.getOWinCount();
+	}
 }

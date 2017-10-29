@@ -40,7 +40,8 @@ class Board extends React.Component {
       <div id="tester">
      <div id="gameboard"> {board} </div>
      <div id="winner"> {winner} </div>
-     </div>
+	 </div>
+	 
     );
   }
 }
