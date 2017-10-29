@@ -1,4 +1,4 @@
-# Administration Manual #
+# TicTacToe Administration Manual #
 
 ## Introduction ##
 
@@ -31,3 +31,5 @@ In the root directory type:
 2. `gradle installDist`
 
 Navigate to `Late-term-Assignment/backend/build/install/backend/bin` and run `./backend`
+
+3. The game runs on localhost:8080 by default
