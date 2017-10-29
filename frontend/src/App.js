@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Board from './Board.js';
+import Restart from './Restart.js';
 
 class App extends Component {
 	constructor() {
@@ -36,6 +37,7 @@ class App extends Component {
 	          <div id="gameboard" onClick={(e)=>this.clicked(e)}>
 			  <Board />
 	          </div>
+				<Restart/>
 	        </div>
 		)
   }
