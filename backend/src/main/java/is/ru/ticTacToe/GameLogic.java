@@ -31,11 +31,15 @@ public class GameLogic {
         }
 
         if(playerTurn == false){
-          playerTurn = !playerTurn;
-            return board.markBoard(input,'X');
+          if(board.markBoard(input,'X') == true){
+            playerTurn = !playerTurn;
+            return true;
+          }
         }
-        playerTurn = !playerTurn;
-        return board.markBoard(input,'O');
+        if(board.markBoard(input,'O') == true){
+          playerTurn = !playerTurn;
+          return true;
+        }
       }
       return false;
     }
