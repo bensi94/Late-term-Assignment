@@ -4,3 +4,9 @@
 This is late term group assignment in software engineering at Reykjavík University.
 
 [Design Report](docs/DesignReport.md)
+
+[Admin manual](docs/AdminManual.md)
+
+[Development manual](docs/DevelopmentManual.md)
+
+[Heroku App](https://the-lannisters-tictactoe.herokuapp.com/)
