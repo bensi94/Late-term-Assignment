@@ -13,7 +13,6 @@ import java.util.Map;
 public class FrontendController {
 
     private GameLogic logicForController = new GameLogic();
-    private JsonResponse response = new JsonResponse();
 
     @RequestMapping(value = "/board", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public String board() {
