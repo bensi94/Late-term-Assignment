@@ -45,3 +45,4 @@ gradle-app.setting
 ezBuild.sh
 codeCoverage
 node_modules
+backend/gameDatabase.db
