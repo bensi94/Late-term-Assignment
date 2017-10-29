@@ -14,7 +14,7 @@ The first step in designing the user interface was to make a low fidelity protot
 
 ### Picture from the webpage###
 As you can see from the picture below, there has not been much change from the prototype we sketched up. ...........
-![Atli can't be found](/docs/pictures/Atli.jpg)
+![Picture from the webApp can't be found](/docs/pictures/PicFromHeroku.png)
 ## Class Diagram ##
 
 The following diagram describes the classes needed for the game. You can assume the entity classes all have get and set functions
