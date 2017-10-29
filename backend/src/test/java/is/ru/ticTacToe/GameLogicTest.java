@@ -107,6 +107,7 @@ public class GameLogicTest {
 	  db.addGameResult("o", 10);
 	  db.addGameResult("o", 10);
       assertEquals(2,gameLogicTest.getOWinCount());
+	}
 
     @Test
     public void testWinnerDiagonallyLeftO(){
